@@ -1,7 +1,7 @@
 
   Feature: User should be able to see majors
 
-    @GetAllStudentsCrossValidateNamesAndMajors
+    @GetAllStudentsCrossValidateNamesAndMajors @Regression
     Scenario: user should be able to cross validate majors between API-UI and DB
 
 
