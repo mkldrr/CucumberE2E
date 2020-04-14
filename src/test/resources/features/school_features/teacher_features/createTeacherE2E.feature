@@ -1,6 +1,6 @@
 
   Feature: User should be able to create a teacher from API
-    @CreatingTeacherE2E
+    @CreatingTeacherE2E  @Regression
 
     Scenario: Creating teacher on API  and comparing with UI
 

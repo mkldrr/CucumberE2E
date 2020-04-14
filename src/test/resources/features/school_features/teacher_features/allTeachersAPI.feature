@@ -1,4 +1,4 @@
-@UpdateTeachersGender
+@UpdateTeachersGender  @Regression
 Feature: User should be able to get all teachers from API
 
   Scenario Outline: User should be able to get all teachers from API

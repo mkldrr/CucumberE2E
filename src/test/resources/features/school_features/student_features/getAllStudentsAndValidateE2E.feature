@@ -1,6 +1,6 @@
 
   Feature: User should be able to get all students and cross validate information
-@getAllStudentsAndCrossValidateInformationE2E
+@getAllStudentsAndCrossValidateInformationE2E   @Regression
     Scenario: User should compare firstName, Major between DB-API-UI and should compare companyName
     between DB-API and Should check how many address contains @ sign
 

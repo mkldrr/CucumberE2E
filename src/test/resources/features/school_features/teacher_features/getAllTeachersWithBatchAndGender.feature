@@ -1,6 +1,6 @@
 
   Feature: User should be able to cross validate teacher batch and gender information between UI - DB - API
-@CrossValidateGenderAndBatchBetweenUIDBAPI-E2E
+@CrossValidateGenderAndBatchBetweenUIDBAPI-E2E   @Regression
     Scenario: User should be able to cross validate teacher batch and gender information between UI - DB - API and provide the number
 
       Given user connects to DB

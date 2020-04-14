@@ -1,4 +1,4 @@
-  @getAllTeachers
+  @getAllTeachers  @Regression
 
     Feature: User should be able to see all teachers
 

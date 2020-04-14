@@ -1,6 +1,6 @@
 Feature: User should be able to update a student on API and validate with UI-DB
 
-  @updateStudentValidateE2E
+  @updateStudentValidateE2E  @Regression
   Scenario: User should be able to update a student on API and validate with UI-DB
 
     Given user hits and PUT - Update a student on API "/student/update"
