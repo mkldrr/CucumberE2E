@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -56,14 +57,18 @@ public class Driver {
                     driver = new SafariDriver();
                     break;
 
-                case "remote_chrome":
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.setCapability("platform", Platform.ANY);
+                case "remotechrome":
+
+                    DesiredCapabilities desiredCapabilities = new DesiredCapabilities().chrome();
+                    desiredCapabilities.setPlatform(Platform.ANY);
                     try {
-                        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),chromeOptions);
+                        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapabilities);
+                        // optional cybertek VM node IP address: 3.87.139.247
+                        // optional ip address to run grid :70.166.39.41
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
+                    break;
             }
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
