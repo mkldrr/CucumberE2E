@@ -125,15 +125,15 @@ public class KayakAirportSearchStepDefs {
 
 
 
-    @Test
-
-    public void test(){
-
-        Driver.getDriver().get("https://www.kayak.com/");
-        Driver.getDriver().findElement(By.name("origin")).click();
-        Driver.getDriver().findElement(By.name("origin")).sendKeys("Nashville");
-    }
-
+//    @Test
+//
+//    public void test(){
+//
+//        Driver.getDriver().get("https://www.kayak.com/");
+//        Driver.getDriver().findElement(By.name("origin")).click();
+//        Driver.getDriver().findElement(By.name("origin")).sendKeys("Nashville");
+//    }
+//
 
 
 

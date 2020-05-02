@@ -10,6 +10,6 @@
         <module name="CucumberE2E" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="12" />
   </component>
 </project>

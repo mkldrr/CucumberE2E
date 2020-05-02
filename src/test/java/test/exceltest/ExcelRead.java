@@ -1,8 +1,9 @@
-package test;
+package test.exceltest;
 
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -62,6 +63,19 @@ public class ExcelRead {
             }
 
         }
+
+
+    }
+
+
+
+    @Test
+
+    public void countTest(){
+
+        int count =0;
+
+        System.out.println(count);
 
 
     }
