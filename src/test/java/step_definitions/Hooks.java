@@ -1,16 +1,28 @@
 package step_definitions;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import cucumber.api.Scenario;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.*;
 
 import java.sql.SQLException;
 
 public class Hooks {
-
+    protected WebDriver driver;
+    protected Actions action;
+    protected WebDriverWait wait;
+    protected static ExtentReports report;
+    protected static ExtentHtmlReporter htmlReporter;
+    protected static ExtentTest extentLogger;
+    protected String url;
     @Before
     public void setUp(Scenario scenario){
 
@@ -21,7 +33,27 @@ public class Hooks {
         Log.start(scenario.getName());
         ExtentReport.startTest(scenario.getName());
 
+
+        //initialize the class
+        report = new ExtentReports();
+        //create report path
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + "/test-output/report.html";
+        //initialize the html reporter with the report path
+        htmlReporter = new ExtentHtmlReporter(path);
+        //attach the html report to the report object
+        report.attachReporter(htmlReporter);
+        htmlReporter.config().setReportName("Vytrack smoke test");
+        //set environment information
+        report.setSystemInfo("Environment", "QA");
+        report.setSystemInfo("Browser", ConfigurationReader.getProperty("browser"));
+        report.setSystemInfo("OS", System.getProperty("os.name"));
+
+
+
     }
+
+
 
     @After
     public void tearDown(Scenario scenario) throws SQLException {
@@ -38,6 +70,7 @@ public class Hooks {
             ExtentReport.pass();
         }
         //after
+        report.flush();
         Driver.quitDriver();
         DBUtility.close();
     }

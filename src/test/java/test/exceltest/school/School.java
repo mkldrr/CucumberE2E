@@ -16,6 +16,8 @@ import java.util.*;
 public class School {
 
 
+
+
    static String [] columns= {"firstName","lastName","joinDate","emailAddress",
             "salary","batch","gender", "phone","subject","section","birthDate","department",
             "password","premanentAddress"  };
@@ -111,29 +113,20 @@ public class School {
     }
 
 
-
-
     @Test
     public void apiPostFromExcel(){
-
-
         ExcelUtility.openExcelFile("Teachers.xlsx","Teachers");
-
         RequestBody requestBody = new RequestBody();
 
-
+       // String[][] dataArrayWithoutFirstRow = ExcelUtility.getDataArrayWithoutFirstRow();
         int count =0;
-
         for (int i = 0; i <ExcelUtility.rowCount()-1 ; i++) {
-
-
             for (int j = 0; j < ExcelUtility.columnCount(); j++) {
                 int count2=0;
                 requestBody.setFirstName(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]); //wanne
                 requestBody.setLastName(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]); //Beer
                 requestBody.setJoinDate(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]); //12/20/1996
                 requestBody.setEmailAddress(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]); //wayne.beer@gmail.com
-                //salary: 54203.0
                 requestBody.setSalary(Integer.parseInt(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++].substring(0, ExcelUtility.getDataArrayWithoutFirstRow()[count][count2].length() - 2)));
                 requestBody.setBatch(Integer.parseInt(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++].substring(0, ExcelUtility.getDataArrayWithoutFirstRow()[count][count2].length() - 3)));
                 requestBody.setGender(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]);
@@ -144,17 +137,10 @@ public class School {
                 requestBody.setDepartment(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]);
                 requestBody.setPassword(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]); //count = 1
                 requestBody.setPremanentAddress(ExcelUtility.getDataArrayWithoutFirstRow()[count][count2++]);  //
-
             }
             count++;
-
-
-
             APIUtility.hitPOST("/teacher/create", requestBody);
         }
-
-
-
     }
 
 
@@ -190,9 +176,13 @@ public class School {
        // System.out.println(ExcelUtility.getCellData(12,3));
 
 
-       System.out.println(Arrays.deepToString(ExcelUtility.getDataArrayWithoutFirstRow()));
+      // System.out.println(Arrays.deepToString(ExcelUtility.getDataArrayWithoutFirstRow()));
+
+
 
      //   System.out.println(Arrays.deepToString(ExcelUtility.getDataArray()));
+
+        System.out.println(ExcelUtility.getDataList());
 
 
 
