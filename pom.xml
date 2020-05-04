@@ -135,6 +135,12 @@
             <version>4.1.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
         <!--LOG4J-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
@@ -154,6 +160,8 @@
             <artifactId>extentreports</artifactId>
             <version>4.0.9</version>
         </dependency>
+
+
         <dependency>
             <groupId>org.webjars.bower</groupId>
             <artifactId>github-com-RobiNN1-elFinder-Material-Theme</artifactId>
@@ -164,6 +172,12 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.kncept.junit5.dataprovider</groupId>
+            <artifactId>junit-dataprovider</artifactId>
+            <version>0.9.3-M6</version>
             <scope>test</scope>
         </dependency>
 
