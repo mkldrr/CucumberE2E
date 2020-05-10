@@ -4,6 +4,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.junit.Test;
+import pages.BasePage;
 import pages.school_pages.teacher_pages.AllTeachersPage;
 import pojo.RequestBody;
 import utilities.APIUtility;
@@ -15,6 +17,8 @@ import java.util.Map;
 public class CreateTeacherOnAPIAndCompareWithUIStepDefinitions {
 
     AllTeachersPage allTeachersPage= new AllTeachersPage();
+
+    BasePage basePage = new BasePage();
 
     Map<String, String > mapData = new HashMap<>();
 
@@ -96,6 +100,27 @@ public class CreateTeacherOnAPIAndCompareWithUIStepDefinitions {
 
 
     }
+
+
+
+
+    @Test
+
+
+   public void goToGoogle(){
+
+        basePage.goToGoogle();
+    }
+
+
+    @Test
+
+
+    public void goToYoutube(){
+
+        basePage.goToYoutube();
+    }
+
 
 
 }
