@@ -3,12 +3,19 @@ package step_definitions.vyTrack_step_definitions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Wait;
 import pages.vyTrack_pages.AllVehiclesPage;
 import pages.vyTrack_pages.VyTrackLoginPage;
 import pages.vyTrack_pages.VytTackHomePage;
+import utilities.Driver;
 import utilities.SeleniumUtils;
+
+import java.util.concurrent.TimeUnit;
 
 public class GetAllVehiclesModelNameStepDefinitions {
 
@@ -17,10 +24,14 @@ public class GetAllVehiclesModelNameStepDefinitions {
    VytTackHomePage vytTackHomePage = new VytTackHomePage();
    VyTrackLoginPage loginPage = new VyTrackLoginPage();
 
+
     @Given("user login vyTrack Web Application")
     public void user_login_vyTrack_Web_Application() {
-        loginPage.login();
+        loginPage.goToGoogle();
         SeleniumUtils.waitFor(4);
+
+
+
 
     }
 

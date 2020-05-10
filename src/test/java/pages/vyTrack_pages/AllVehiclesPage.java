@@ -16,7 +16,7 @@ public class AllVehiclesPage {
     }
 
     @FindBy(xpath = "//tr[@class='grid-header-row']/th")
-   public List<WebElement> tableHeaders;
+    public List<WebElement> tableHeaders;
 
 
 

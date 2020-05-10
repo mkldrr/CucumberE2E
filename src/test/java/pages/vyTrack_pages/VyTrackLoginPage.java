@@ -25,7 +25,7 @@ public class VyTrackLoginPage extends BasePage {
     @FindBy(id = "_submit")
     public WebElement loginButton;
 
-    public void login(){
+    public void goToGoogle(){
         Driver.getDriver().get(ConfigurationReader.getProperty("vytractUrl"));
         SeleniumUtils.waitFor(2);
         usernameInput.sendKeys(ConfigurationReader.getProperty("vytrackUsername"));
