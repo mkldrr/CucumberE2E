@@ -73,6 +73,7 @@ public class APIUtility {
         response = RestAssured.delete(uri);
 
 
+
         if (response.getStatusCode()==200) System.out.println("The StatusCode is: " +response.getStatusCode()
                 + "\nThe user with "+ ID +" ID number is successfully DELETED from API");
         else System.out.println("Either Resource: "  + resource + "\n OR  ID: " + ID + " is INVALID"  );

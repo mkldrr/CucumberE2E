@@ -82,15 +82,21 @@ public class Employee {
 
 
     public static void main(String[] args) {
+
+
         ArrayList<Employee> allEmployees = new ArrayList<>();
+
         fillingTheListOfEmployees(allEmployees, 10);
         System.out.println(allEmployees);
+
         Comparator<Employee> byName = Comparator.comparing(Employee::getName);
         Comparator<Employee> bySalary = Comparator.comparing(Employee::getSalary);
         Collections.sort(allEmployees,byName.reversed());
         Collections.sort(allEmployees, byName.thenComparing(bySalary));
         System.out.println(allEmployees);
         System.out.println(byName);
+
+
     }
 
 
