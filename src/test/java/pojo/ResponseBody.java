@@ -7,6 +7,10 @@ import pojo.student.Company;
 import pojo.student.Contact;
 import pojo.student.Student;
 import pojo.teacher.Teacher;
+import pojo.users.Avatar;
+import pojo.users.Edit;
+import pojo.users.Self;
+import pojo.users.Users;
 
 import java.util.List;
 
@@ -46,5 +50,26 @@ public class ResponseBody {
     private Company company;
 
     private int studentId;
+
+
+
+    List<Users> users;
+    private String id;
+
+    private String first_name;
+    private String last_name;
+   // private String gender;
+
+    private String dob;
+    private String email;
+    private String website;
+    private String address;
+    private String status;
+
+
+    private Avatar avatar;
+    private Edit edit;
+    private Self self;
+
 
 }

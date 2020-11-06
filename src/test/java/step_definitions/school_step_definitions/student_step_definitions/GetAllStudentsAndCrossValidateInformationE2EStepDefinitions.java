@@ -3,10 +3,15 @@ package step_definitions.school_step_definitions.student_step_definitions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.json.Json;
 import pages.school_pages.student_pages.AllStudentsPage;
+import pojo.ResponseBody;
 import pojo.student.Student;
 import utilities.APIUtility;
 import utilities.DBUtility;
@@ -28,6 +33,10 @@ public class GetAllStudentsAndCrossValidateInformationE2EStepDefinitions {
     List<Map<Object, Object>> emailAddressFromDB;
 
     List<Map<Object, Object>> companyNameFromDB;
+
+    static ResponseBody responseBody = null;
+
+    static Response response =null;
 
 
     @Given("user hits and GETs all students from API at {string}")
@@ -65,18 +74,18 @@ public class GetAllStudentsAndCrossValidateInformationE2EStepDefinitions {
         for (int i = 0; i <APIUtility.getResponseBody().getStudents().size() ; i++) {
 
                 for (int j=0; j< dataBase.size(); j++){
-                   // System.out.println("\n order of major from API : " + APIUtility.getResponseBody().getStudents().get(i).getMajor());
+                   System.out.println("\n order of major from API : " + APIUtility.getResponseBody().getStudents().get(i).getMajor());
 
-                    //System.out.println("\n order of firstName from DB: " + dataBase.get(j).get("FIRST_NAME").toString());
+                    System.out.println("\n order of firstName from DB: " + dataBase.get(j).get("FIRST_NAME").toString());
 
                     if (dataBase.get(j).get("FIRST_NAME").toString()
                             .equals(APIUtility.getResponseBody().getStudents().get(i).getFirstName())
                             && dataBase.get(j).get("FIRST_NAME").toString()
                             .equals(allStudentsPage.listOfNamesStudents.get(i).getText())) {
 
-                       // System.out.println("first name from DB : " + dataBase.get(j).get("FIRST_NAME").toString());
+                       System.out.println("first name from DB : " + dataBase.get(j).get("FIRST_NAME").toString());
 
-                       // System.out.println("first name from API: "+ APIUtility.getResponseBody().getStudents().get(i).getFirstName());
+                        System.out.println("first name from API: "+ APIUtility.getResponseBody().getStudents().get(i).getFirstName());
 
                         Assert.assertTrue(dataBase.get(j).get("FIRST_NAME").toString()
                                 .equals(APIUtility.getResponseBody().getStudents().get(i).getFirstName()));
@@ -243,6 +252,24 @@ public class GetAllStudentsAndCrossValidateInformationE2EStepDefinitions {
 
         APIUtility.hitGET("/student/all");
   //  System.out.println(  APIUtility.getResponseBody().getStudents().get(0));
+
+
+}
+
+
+
+
+
+@Test
+
+    public void test12345(){
+
+
+       response = RestAssured.given().when().contentType(ContentType.JSON).get("https://gorest.co.in/public-api/users?access-token=ZKU5oqqNWfqPWqd6b7vfnmpYFXqesotiUUEa");
+
+    System.out.println(response.prettyPrint());
+
+
 
 
 }

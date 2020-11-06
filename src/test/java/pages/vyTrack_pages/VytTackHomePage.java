@@ -1,5 +1,6 @@
 package pages.vyTrack_pages;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
@@ -23,5 +24,12 @@ public class VytTackHomePage {
         SeleniumUtils.waitFor(2);
         Driver.getDriver().findElement(By.xpath(moduleLocatorXpath)).click();
         SeleniumUtils.waitFor(2);
+    }
+
+
+    @Test
+    public void sdkj(){
+
+            Driver.getDriver().get("https://www.crateandbarrel.com/");
     }
 }

@@ -120,6 +120,7 @@ public class UpdateAStudentAndValidateE2EStepDefinitions {
         Assert.assertTrue(allStudentsPage.studentID.getText().trim().equals(APIUtility.getResponseBody().getStudentId()+""));
         Assert.assertTrue(APIUtility.getResponseBody().getContact().getEmailAddress().trim().equals(allStudentsPage.newEmail.getText().trim()));
         Assert.assertTrue(APIUtility.getResponseBody().getMajor().trim().equals(allStudentsPage.majorUpdate.getText().trim()));
+      //  Assert.assertTrue(APIUtility.getResponseBody().getStudents().get(allStudentsPage.listOfNamesStudents.size()).getMajor().equals("WHY"));
         SeleniumUtils.waitFor(4);
 
 

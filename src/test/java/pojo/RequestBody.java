@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import pojo.student.Company;
 import pojo.student.Contact;
+import pojo.users.Avatar;
+import pojo.users.Edit;
+import pojo.users.Self;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
@@ -41,6 +44,26 @@ public class RequestBody {
     private Company company;
 
     private int studentId;
+
+
+
+
+//----------------------------------------------
+
+    private String first_name;
+    private String last_name;
+    //private String gender;
+
+    private String dob;
+    private String email;
+    private String website;
+    private String address;
+    private String status;
+
+
+    private Avatar avatar;
+    private Edit edit;
+    private Self self;
 
 
 }
