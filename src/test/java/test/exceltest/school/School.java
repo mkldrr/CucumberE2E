@@ -32,7 +32,7 @@ public class School {
 
         Random random = new Random();
 
-        for (int i = 0; i <20 ; i++) {
+        for (int i = 0; i <300 ; i++) {
 
             String firstName = faker.name().firstName();
             String lastName= faker.name().lastName();
@@ -46,12 +46,12 @@ public class School {
         }
 
         Workbook workbook = new XSSFWorkbook();
-        Sheet sheet = workbook.createSheet("Teachers");
+        Sheet sheet = workbook.createSheet("Teachers3");
 
         Font headerFont = workbook.createFont();
         headerFont.setBold(true);
         headerFont.setFontHeightInPoints((short) 15);
-        headerFont.setColor(IndexedColors.LIGHT_BLUE.getIndex());
+        headerFont.setColor(IndexedColors.DARK_RED.getIndex());
 
         CellStyle headerCellStyle = workbook.createCellStyle();
 
@@ -102,7 +102,7 @@ public class School {
             sheet.autoSizeColumn(i);
         }
 
-        FileOutputStream fileOutputStream = new FileOutputStream("Teachers.xlsx");//it writing to excel
+        FileOutputStream fileOutputStream = new FileOutputStream("Teachers3.xlsx");//it writing to excel
         workbook.write(fileOutputStream);
 
         fileOutputStream.close();
@@ -115,7 +115,7 @@ public class School {
 
     @Test
     public void apiPostFromExcel(){
-        ExcelUtility.openExcelFile("Teachers.xlsx","Teachers");
+        ExcelUtility.openExcelFile("Teachers3.xlsx","Teachers3");
         RequestBody requestBody = new RequestBody();
 
        // String[][] dataArrayWithoutFirstRow = ExcelUtility.getDataArrayWithoutFirstRow();

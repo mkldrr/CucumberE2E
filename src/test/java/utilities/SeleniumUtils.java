@@ -13,6 +13,14 @@ public class SeleniumUtils {
 
     private static WebDriver driver = Driver.getDriver();
 
+   static Comparable<String> str = new Comparable<String>() {
+        @Override
+        public int compareTo(String o) {
+            return 0;
+        }
+    };
+
+
     public static List<String> getElementsText(By locator){
 
         List<WebElement> elements =driver.findElements(locator);

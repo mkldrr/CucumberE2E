@@ -24,7 +24,7 @@ public class ExcelRead {
      //   3. //Load the work book into the java class.
 
         XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
-//Steps: //  WorkBook > sheet > row > cell
+        //Steps: //  WorkBook > sheet > row > cell
 
      //   4. //Getting the sheet from the workbook
 
